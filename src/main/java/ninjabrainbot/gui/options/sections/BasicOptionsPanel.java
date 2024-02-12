@@ -41,6 +41,7 @@ public class BasicOptionsPanel extends JPanel {
 		column2.add(new RadioButtonPanel(styleManager, I18n.get("settings.view_type"), preferences.view));
 		column2.add(new RadioButtonPanel(styleManager, I18n.get("settings.window_size"), preferences.size));
 		column2.add(new RadioButtonPanel(styleManager, I18n.get("settings.mc_version"), preferences.mcVersion));
+		column2.add(new CheckboxPanel(styleManager, I18n.get("settings.check_vers"), preferences.checkMCVersion));
 	}
 
 }

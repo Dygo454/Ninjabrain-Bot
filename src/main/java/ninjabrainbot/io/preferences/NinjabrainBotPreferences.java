@@ -1,6 +1,5 @@
 package ninjabrainbot.io.preferences;
 
-import com.github.kwhat.jnativehook.keyboard.NativeKeyEvent;
 import ninjabrainbot.io.KeyConverter;
 import ninjabrainbot.io.preferences.enums.AllAdvancementsToggleType;
 import ninjabrainbot.io.preferences.enums.MainViewType;
@@ -64,6 +63,7 @@ public class NinjabrainBotPreferences {
 	public final MultipleChoicePreference<StrongholdDisplayType> strongholdDisplayType;
 	public final MultipleChoicePreference<MainViewType> view;
 	public final MultipleChoicePreference<McVersion> mcVersion;
+	public final BooleanPreference checkMCVersion;
 	public final MultipleChoicePreference<AllAdvancementsToggleType> allAdvancementsToggleType;
 
 	public NinjabrainBotPreferences(IPreferenceSource source) {
@@ -127,6 +127,7 @@ public class NinjabrainBotPreferences {
 				new StrongholdDisplayType[] { StrongholdDisplayType.FOURFOUR, StrongholdDisplayType.EIGHTEIGHT, StrongholdDisplayType.CHUNK }, source);
 		view = new MultipleChoicePreference<>("view", MainViewType.BASIC, new int[] { 0, 1 }, new MainViewType[] { MainViewType.BASIC, MainViewType.DETAILED }, source);
 		mcVersion = new MultipleChoicePreference<>("mc_version", McVersion.PRE_119, new int[] { 0, 1 }, new McVersion[] { McVersion.PRE_119, McVersion.POST_119 }, source);
+		checkMCVersion = new BooleanPreference("check_vers", true, source);
 		allAdvancementsToggleType = new MultipleChoicePreference<>("aa_toggle_type", AllAdvancementsToggleType.Automatic, new int[] { 0, 1 }, new AllAdvancementsToggleType[] { AllAdvancementsToggleType.Automatic, AllAdvancementsToggleType.Hotkey }, source);
 
 		// Upgrade if necessary
